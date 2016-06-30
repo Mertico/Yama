@@ -36,16 +36,7 @@ class Connection {
         $pdo = new \PDO($conStr);
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $pdo->query('SELECT now()');
-        while ($row = $stmt->fetch())
-        {
-            var_dump($row) . "\n";
-        }
-
         return $pdo;
-    }
-    public function Query($query) {
-      //return query($query)->fetchAll(\PDO::FETCH_COLUMN);
     }
     /**
      * return an instance of the Connection object
