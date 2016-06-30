@@ -38,6 +38,46 @@ class Connection {
 
         return $pdo;
     }
+    public function AllMark()
+    {
+      $connection = $this->get()->connect();
+      $query = 'SELECT
+        pits."ID",
+        pits."Address",
+        pits."Time_Create",
+        pits."X",
+        pits."Y",
+        pits."About"
+      FROM
+        yama.pits
+      WHERE
+        pits."ID" > 0
+      ORDER BY
+        pits."ID" ASC';
+
+      $res = $connection->query($query);
+      $json = ["type" => "FeatureCollection",
+               "features" => []
+              ];
+      $res->setFetchMode(\PDO::FETCH_NUM);
+      while ($row = $res->fetch())
+      {
+          $temp["type"] = "Feature";
+          $temp["id"] = $row[0];
+          $temp["geometry"]["type"] = "Point";
+          $temp["geometry"]["coordinates"] = [(double)$row[3], (double)$row[4]];
+
+          $temp["properties"]["balloonContent"] = 'Дата добавления: '.date('m.d.Y H:i:s', strtotime($row[2])).' <br />'.$row[5]."<br /> Фото: <br /><img height='100%' width='100%' src='foto.jpg'>";
+          $temp["properties"]["clusterCaption"] = '№'.$row[0];
+          $temp["properties"]["hintContent"] = 'Яма №'.$row[0];
+          $json['features'][] = $temp;
+
+          //$row[2] = date('m.d.Y H:i:s', strtotime($row[2]));
+      }
+      $json = json_encode($json, JSON_UNESCAPED_UNICODE);
+      return $json;
+    }
+
     /**
      * return an instance of the Connection object
      * @return type
