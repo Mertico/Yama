@@ -1,4 +1,17 @@
-<form enctype="multipart/form-data" method="post" action="upload.php">
-  <input type="file" size="32" name="image_field" value="">
-  <input type="submit" name="Submit" value="upload">
+<script src="click.js" type="text/javascript"></script>
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  <br />
+  <textarea placeholder="Описание" name="about"></textarea>
+  <br />
+  <input type="file" name="image_field" size="32" value=""><br />
+  <input type="submit" value="upload" class="add-button" name="Submit">
+  <br />
+  <input type="text" placeholder="Введите адрес" class="add_adress-textbox" name="address">
+  <br/>
+  OR
+  <br/>
+  <input type="hidden" id="coords" name="coords">
+  <div id="map_click"></div>
+  <input type="submit" name="Submit" value="Добавить">
 </form>
