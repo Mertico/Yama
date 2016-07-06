@@ -13,6 +13,9 @@
       background-color: rgba(9, 9, 9, 0.85);
       z-index: 9;
     }
+    header img {
+      padding: 0.7rem;
+    }
     footer
     {
       font-size: 12px;
@@ -90,7 +93,7 @@
       color: #2f2f2f;
       font-size: 3rem;
       text-transform: uppercase;
-      font-family: 'Open Sans';   
+      font-family: 'Open Sans';
      }
     .h1_home-wrapper
     {
@@ -119,7 +122,7 @@
     {
       margin-top: 0;
       padding-top: 3rem;
-      
+
     }
     #home p {
       padding: 0 14% 2rem 14% ;
@@ -323,7 +326,7 @@
       width: 60%;
       margin: 0 auto;
       height: 40%;
-      padding: 0rem 5rem;
+      padding: 0 5rem;
       padding-bottom: 1rem;
       padding-top: 1rem;
       color: #2f2f2f;
@@ -336,7 +339,7 @@
     }
     .repeater_uzors
     {
-      background: url(../img/Uzor_1_H.png) repeat;
+      background: url('../img/Uzor_1_H.png') repeat;
       height: 18px;
       width: 100%;
       position: absolute;
@@ -344,7 +347,7 @@
     }
     .repeater_uzors_black
     {
-      background: url(../img/Uzor_1_H.png) repeat;
+      background: url('../img/Uzor_1_H.png') repeat;
       height: 18px;
       width: 100%;
       position: absolute;
@@ -356,14 +359,14 @@
     }
     #about
     {
-      background: url(../img/Uzor_2.png) repeat;
+      background: url('../img/Uzor_2.png') repeat;
       color: rgba(255,255,255,0.81);
       min-height: 55rem;
     }
     #map {
-      width: 100%; 
-      min-height: 50rem; 
-      padding: 0; 
+      width: 100%;
+      min-height: 50rem;
+      padding: 0;
       margin: 0;
    }
    #pit
@@ -376,7 +379,7 @@
     font-size: 14px;
     color: grey;
    }
-   
+
     table
     {
       width: 100%;
@@ -385,7 +388,7 @@
     }
     table *
     {
-      
+
     }
     .main
     {
@@ -495,14 +498,14 @@
 .img_block span {
     background: rgba(0, 92, 44, 0.5);
     width:100%;
-    height:0px;
+    height:0;
     text-transform:uppercase;
     font-size:11px;
     line-height:60px;
     position:absolute;
     display:block;
     overflow: hidden;
-    bottom:0px;
+    bottom:0;
     left:0;
     z-index: 9910;
     -moz-transition: all .4s;

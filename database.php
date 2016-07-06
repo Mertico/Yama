@@ -66,7 +66,16 @@ class Connection {
           $temp["geometry"]["type"] = "Point";
           $temp["geometry"]["coordinates"] = [(double)$row[3], (double)$row[4]];
 
-          $temp["properties"]["balloonContent"] = 'Дата добавления: '.date('m.d.Y H:i:s', strtotime($row[2])).' <br />'.$row[5]."<br /> Фото: <br /><img height='100%' width='100%' src='foto.jpg'>";
+          //$temp["properties"]["balloonContent"] = 'Дата добавления: '.date('m.d.Y H:i:s', strtotime($row[2])).' <br />'.$row[5]."<br /> Фото: <br /><img height='100%' width='300px' src='img_pit/foto.jpg'>";
+
+          //$temp["properties"]["balloonContent"] =
+          //'Дата добавления: '.date('m.d.Y H:i:s', strtotime($row[2])).'
+          //<br />'.$row[5]."<br /> Фото: <br /><img height='100%' width='300px' src='img_pit/foto.jpg'>";
+          $temp["properties"]["balloonContent"] =
+          "<img style='width: 100%' src='img_pit/pit_$row[0].jpg'><br /><small>".
+          date('m.d.Y H:i', strtotime($row[2])).'</small><br />'.$row[5].'<br /><b>'.$row[1].'</b>';
+
+
           $temp["properties"]["clusterCaption"] = '№'.$row[0];
           $temp["properties"]["hintContent"] = 'Яма №'.$row[0];
           $json['features'][] = $temp;
@@ -87,10 +96,9 @@ class Connection {
       $data['about']=$about;
       $connection = $this->get()->connect();
       $query = 'INSERT INTO "yama"."pits" ("Address","X","Y","About") '.
-            'VALUES (\''.$address.'\', '.(double)$data['cords'][0].' ,'.(double)$data['cords'][1].', \'Большая яма!\');';
-      echo $query;
+            'VALUES (\''.$address.'\', '.(double)$data['cords'][0].' ,'.(double)$data['cords'][1].', \''.$about.'\');';
       $connection->query($query);
-      $id = $db->lastInsertId('pit_ID_seq');
+      $id = $connection->query('SELECT pits."ID" FROM yama.pits ORDER BY pits."ID" DESC LIMIT 1')->fetch()[0];
       require_once 'upload.php';
       return $data;
     }

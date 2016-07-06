@@ -151,9 +151,9 @@
   -o-transition: all 0.2s 0.2s;
   transition: all 0.2s 0.2s;
 }
-.modal-container-map button:hover 
-{ 
-  background: rgba(9, 9, 9, 0.70); 
+.modal-container-map button:hover
+{
+  background: rgba(9, 9, 9, 0.70);
 }
 
 .file_upload{
@@ -161,7 +161,7 @@
     overflow: hidden;
     font-size: 1em;        /* example */
     height: 2em;           /* example */
-    line-height: 2em;       
+    line-height: 2em;
 }
 
 .file_upload > button{
@@ -174,13 +174,13 @@
     border: 2px solid lightgrey;
     box-shadow: none;
     text-transform: none;
-    font-size: 13px; 
+    font-size: 13px;
 }
 .file_upload > div{
-    float: right; 
+    float: right;
     padding-right: 1rem;
     text-transform: none;
-    font-size: 13px;     
+    font-size: 13px;
 }
 .file_upload input[type=file]{
     position: absolute;
@@ -196,6 +196,6 @@
 }
 .admin_form
 {
-  color: rgba(9, 9, 9, 0.85);
+  color: rgba(9, 9, 9, .85);
   padding: 2rem;
-}        
+}

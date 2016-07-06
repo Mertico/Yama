@@ -25,7 +25,7 @@ function init () {
     myMap.geoObjects.add(objectManager);
 
     $.ajax({
-        url: "https://mertico.ru/map/data.json"
+        url: "http://yama/AllMark.php"
     }).done(function(data) {
         objectManager.add(data);
     });
