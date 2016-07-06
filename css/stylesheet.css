@@ -3,7 +3,6 @@
     	cursor: default;
       margin: 0;
       font-family: helvetica;
-      background: #000;
     }
     header {
       position: fixed;
@@ -11,7 +10,7 @@
       width: 100%;
       font-size: 2.0rem;
       background-color: rgba(9, 9, 9, 0.85);
-      z-index: 9;
+      z-index: 10000;
     }
     header img {
       padding: 0.7rem;
@@ -74,11 +73,11 @@
     }
     #home {
       min-height: 60rem;
-      background: url(../img/Uzor_1.png) repeat;
+      /*background: url(../img/Uzor_1.png) repeat;*/
     }
     #home h1 {
       font-weight: 400;
-      font-size: 4.0rem;
+      font-size: 3.9rem;
       text-align: center;
       text-transform: uppercase;
       color: white;
@@ -98,7 +97,8 @@
     {
       background-size: contain;
       background: url('../img/uzor.png') repeat,
-                  url('../img/back.png') center center no-repeat scroll;
+                  url('../img/back.png') center center no-repeat scroll,
+                  black;
       background-size: auto, cover;
       width: 100%;
       min-height: 27.5rem;
@@ -114,7 +114,7 @@
       width: 50rem;
       text-align: center;
       margin: 0 auto;
-      font-size: 4.7rem;
+      font-size: 4.5rem;
       letter-spacing: 1px;
     }
     .h2_home-wrapper
@@ -297,11 +297,11 @@
     #pit h1
     {
       font-weight: 400;
-      font-size: 4rem;
       text-align: center;
-      text-transform: uppercase;
-      padding: 0rem 2rem;
       color: #2f2f2f;
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-family: 'Open Sans';
     }
     #about h1
     {
@@ -311,7 +311,6 @@
       text-transform: uppercase;
       padding: 0rem 2rem;
       color: white;
-      padding-top: 3.5rem;
     }
     #about hr
     {
@@ -346,15 +345,11 @@
     }
     .repeater_uzors_black
     {
-      background: url('../img/Uzor_1_H.png') repeat;
+      background: url('../img/Uzor_2_F.png') repeat;
       height: 18px;
       width: 100%;
       position: absolute;
-      top: 0;
-      -moz-transform: rotate(180deg);
-      -webkit-transform: rotate(180deg);
-      -o-transform: rotate(180deg);
-      transform: rotate(180deg);
+      bottom: 0;
     }
     #about
     {
@@ -370,7 +365,7 @@
    }
    #pit
    {
-     background: url('../img/Uzor_1.png') repeat;
+     /*background: url('../img/Uzor_1.png') repeat;*/
    }
    i
    {
@@ -385,35 +380,37 @@
       height: 35vw;
       padding-bottom: 10rem;
     }
+    /*span::selection {
+      background: transparent;
+    }
+    span::selection
+    {
+      background: transparent;
+    }*/
     .main
     {
       width: 35%;
       height: 100%;
-      background: lightgrey;
     }
     .twomain
     {
       width: 40%;
       height: 50%;
-      background: lightgreen;
     }
     .threemain
     {
       width: 25%;
       height: 50%;
-      background: lightcoral;
     }
     .oneless
     {
       width: 20%;
       height: 50%;
-      background: darkgray;
     }
     .twoless
     {
       width: 40%;
       height: 50%;
-      background: coral;
     }
     .event
     {
@@ -448,21 +445,25 @@
     background-color:rgba(0, 160, 150, 0.7);
 }
 .img_block span {
-    background: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.80);
     width:100%;
     height:100%;
-    font-size: 11px;
+    font-size: 17px;
     position:absolute;
     display: block;
     overflow: hidden;
-    top: 80%;
-    left:0;
+    top: 40vh;
+    left: 0;
     z-index: 9910;
     -moz-transition: all .4s;
     -webkit-transition: all .4s;
     -o-transition: all .4s;
     transition: all .4s;
     color: rgba(9, 9, 9, 0.85);
+    font-family: sans-serif;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
 }
 .img_block:hover span {
     top:0;
@@ -470,5 +471,14 @@
 }
 .main span
 {
-  top: 90%;
+  top: 60vh;
+}
+table p
+{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+span p:first-child
+{
+  color: grey;
 }

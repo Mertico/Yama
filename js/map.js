@@ -1,7 +1,7 @@
 ymaps.ready(init);
-
+var myMap;
 function init () {
-    var myMap = new ymaps.Map('map', {
+    myMap = new ymaps.Map('map', {
             center: [54.3375, 48.43],
             zoom: 13,
 			controls: []
@@ -29,5 +29,18 @@ function init () {
     }).done(function(data) {
         objectManager.add(data);
     });
+}
 
+function OpenMark(ID) {
+  var objectState = objectManager.getObjectState(ID);
+  if (objectState.isClustered) {
+      // Сделаем так, чтобы указанный объект был "выбран" в балуне.
+      objectManager.clusters.state.set('activeObject', objectManager.objects.getById(ID));
+      // Все сгенерированные кластеры имеют уникальные идентификаторы.
+      // Этот идентификатор нужно передать в менеджер балуна, чтобы указать,
+      // на каком кластере нужно показать балун.
+      objectManager.clusters.balloon.open(objectState.cluster.id);
+  } else {
+      objectManager.objects.balloon.open(ID);
+  }
 }

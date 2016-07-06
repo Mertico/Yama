@@ -118,14 +118,16 @@ class Connection {
       WHERE
         pits."ID" > 0
       ORDER BY
-        pits."ID" DESC LIMIT 4';
+        pits."ID" DESC LIMIT 5';
       $res = $connection->query($query);
       $res->setFetchMode(\PDO::FETCH_NUM);
+      $array;
       while ($row = $res->fetch()) {
         #... вывод последних 4 ям
         # ABOUT, ID
+        $array[]=$row;
       }
-
+      return $array;
     }
     /**
      * return an instance of the Connection object
