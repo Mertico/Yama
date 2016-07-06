@@ -16,7 +16,7 @@ if ($handle->uploaded) {
   $handle->image_resize         = true;
   $handle->image_x              = 800;
   $handle->image_ratio_y        = true;
-  $handle->process('image/');
+  $handle->process('img_pit/');
   if ($handle->processed) {
     //echo 'image resized';
     $handle->clean();
