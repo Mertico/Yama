@@ -29,9 +29,47 @@ function init () {
     }).done(function(data) {
         objectManager.add(data);
     });
+
+
+      myMap.events.add('click', function (e) {
+          var coords = e.get('coords');
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://geocode-maps.yandex.ru/1.x/?format=json&sco=latlong&geocode='+[coords[0].toPrecision(12),coords[1].toPrecision(12)].join(','), false);
+      xhr.send();
+      var json_geo = JSON.parse(xhr.responseText);
+
+      myMap.balloon.open(coords, {
+                      contentHeader:'Добавление ямы',
+                      contentBody:
+                          '<form action="AddMark.php" method="post" enctype="multipart/form-data">' +
+                            '<input type="hidden" value="'+json_geo.response.GeoObjectCollection.featureMember[0].GeoObject['name']+'" class="add_adress-textbox" id="add_adress-textbox" name="address">' +
+                            '<textarea style="width: auto;" cols="48" rows="8" placeholder="Описание" name="about"></textarea>' +
+                            '<div class="file_upload">' +
+                                '<button type="button">Открыть</button>' +
+                                '<div>Выберите картинку</div>' +
+                                '<input type="file" name="image_field" size="32">' +
+                            '</div>' +
+                            '<input type="hidden" value="'+[coords[0].toPrecision(12),coords[1].toPrecision(12)].join(', ')+'" id="coords" name="coords">' +
+                            '<input type="submit" value="Добавить" class="add-button">' +
+                          '</form><br />',
+                      contentFooter:'<sup>Если ошиблись щелкните еще раз</sup>'
+                  });
+                  document.getElementById('add_adress-textbox').value=json_geo.response.GeoObjectCollection.featureMember[0].GeoObject['name'];
+      });
+
+
+
+
+
+
+
+
+
 }
 
 function OpenMark(ID) {
+
+  myMap.setCenter([objectManager.objects.getById(ID)['geometry'].coordinates[0],objectManager.objects.getById(ID)['geometry'].coordinates[1]+0.025]);
   var objectState = objectManager.getObjectState(ID);
   if (objectState.isClustered) {
       // Сделаем так, чтобы указанный объект был "выбран" в балуне.
@@ -43,4 +81,7 @@ function OpenMark(ID) {
   } else {
       objectManager.objects.balloon.open(ID);
   }
+/*
+  );*/
+  //console.log(objectManager.objects.getById(ID)['geometry'].coordinates);
 }
