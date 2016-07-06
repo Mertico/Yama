@@ -82,7 +82,6 @@
       text-align: center;
       text-transform: uppercase;
       color: white;
-      /*letter-spacing: 3px;*/
       margin-bottom: 1rem;
       font-family: 'Open Sans';
     }
@@ -226,7 +225,7 @@
       -o-transform: rotate(-10deg);
       transform: rotate(-10deg);
     }
-    span
+    header span
     {
       float: right;
       color: white;
@@ -386,10 +385,6 @@
       height: 35vw;
       padding-bottom: 10rem;
     }
-    table *
-    {
-
-    }
     .main
     {
       width: 35%;
@@ -424,52 +419,10 @@
     {
       overflow: hidden;
     }
-    .abs_in_table
-    {
-      position: relative;
-      top: 100%;
-      bottom: -200rem;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,255,255,0.4);
-      font-size: 13px;
-      color: grey;
-      /*transform: translateY(72%);*/
-      -moz-transition: all 0.2s 0.2s;
-      -webkit-transition: all 0.2s 0.2s;
-      -o-transition: all 0.2s 0.2s;
-      transition: all 0.2 0.2s;
-    }
-    .abs_in_table > p
-    {
-      padding: 1rem;
-    }
-    .mainabs
-    {
-    }
-    .main:hover .mainabs, .mainabs:hover
-    {
-      top: 0;
-    }
-    .threemain:hover .mainthreeabs, .mainthreeabs:hover
-    {
-        top: 0;
-    }
-    .twomain:hover .maintwoabs, .maintwoabs:hover
-    {
-        top: 0;
-    }
-    .oneless:hover .lessoneabs, .lessoneabs:hover
-    {
-        top: 0;
-    }
-    .twoless:hover .lesstwoabs, .lesstwoabs:hover
-    {
-        top: 0;
-    }
 
     .img_block {
-
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     position: relative;
     -moz-transition: all .4s;
@@ -479,7 +432,6 @@
     cursor:pointer;
 }
 .img_block .over_block {
-    background-color:rgba(0, 160, 150, 0);
     width:100%;
     height:100%;
     position:absolute;
@@ -496,25 +448,27 @@
     background-color:rgba(0, 160, 150, 0.7);
 }
 .img_block span {
-    background: rgba(0, 92, 44, 0.5);
+    background: rgba(255,255,255,0.4);
     width:100%;
-    height:0;
-    text-transform:uppercase;
-    font-size:11px;
-    line-height:60px;
+    height:100%;
+    font-size: 11px;
     position:absolute;
-    display:block;
+    display: block;
     overflow: hidden;
-    bottom:0;
+    top: 80%;
     left:0;
     z-index: 9910;
     -moz-transition: all .4s;
     -webkit-transition: all .4s;
     -o-transition: all .4s;
     transition: all .4s;
+    color: rgba(9, 9, 9, 0.85);
 }
 .img_block:hover span {
-    bottom:0;
-    height:60px;
-    color: #ffffff;
+    top:0;
+    color: rgba(9, 9, 9, 0.85);
+}
+.main span
+{
+  top: 90%;
 }
