@@ -7,7 +7,6 @@
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru-RU" type="text/javascript"></script>
     <script src="http://yandex.st/jquery/2.1.0/jquery.min.js" type="text/javascript"></script>
     <script src="js/map.js" type="text/javascript"></script>
-    <script src="js/click.js" type="text/javascript"></script>
 	<script type="text/javascript">
 	setInterval( function() {
   $(function(){
