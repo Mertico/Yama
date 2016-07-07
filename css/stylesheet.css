@@ -322,8 +322,8 @@
     {
       width: 40rem;
       border: none;
-      border-top: 1px dashed rgba(9, 9, 9, 0.85);
-      border-bottom: 1px dashed grey;
+      border-top: 1px solid rgba(9, 9, 9, 0.85);
+      border-bottom: 1px solid grey;
     }
     .add_new_pit-block
     {
@@ -481,10 +481,12 @@ table p
 {
   padding-left: 1rem;
   padding-right: 1rem;
+  font-family: 'Open Sans';
 }
 span p:first-child
 {
   color: grey;
+  margin-bottom: -1.25rem;
 }
 
 

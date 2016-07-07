@@ -103,31 +103,31 @@
         <div class="img_block">
             <div class="over_block" style="background: url('img_pit/pit_<?=$array[0][0]?>.jpg') center center; background-size: cover;"></div>
             <a onclick="OpenMark(<?=$array[0][0]?>)" href="#mapid"><span><p><?=date('m.d.Y H:i', strtotime($array[0][2]))?></p>
-            <p><?=$array[0][5]?></p></span></a>
+            <p><b><?=$array[0][1]?></b><br/><?=$array[0][5]?></p></span></a>
     </div>
     </td>
     <td colspan="5" class="twomain event">
       <div class="img_block">
             <div class="over_block" style="background: url('img_pit/pit_<?=$array[1][0]?>.jpg') center center; background-size: cover;"></div>
             <a onclick="OpenMark(<?=$array[1][0]?>)" href="#mapid"><span><p><?=date('m.d.Y H:i', strtotime($array[1][2]))?></p>
-            <p><?=$array[1][5]?></p></span></a>
+            <p><b><?=$array[1][1]?></b><br/><?=$array[1][5]?></p></span></a>
     </div></td>
     <td colspan="2" class="threemain event"><div class="img_block">
             <div class="over_block" style="background: url('img_pit/pit_<?=$array[2][0]?>.jpg') center center; background-size: cover;"></div>
             <a onclick="OpenMark(<?=$array[2][0]?>)" href="#mapid"><span><p><?=date('m.d.Y H:i', strtotime($array[2][2]))?></p>
-            <p><?=$array[2][5]?></p></span></a>
+            <p><b><?=$array[2][1]?></b><br/><?=$array[2][5]?></p></span></a>
     </div></td>
   </tr>
   <tr>
     <td colspan="3" class="oneless event"><div class="img_block">
             <div class="over_block" style="background: url('img_pit/pit_<?=$array[3][0]?>.jpg') center center; background-size: cover;"></div>
             <a onclick="OpenMark(<?=$array[3][0]?>)" href="#mapid"><span><p><?=date('m.d.Y H:i', strtotime($array[3][2]))?></p>
-            <p><?=$array[3][5]?></p></span></a>
+            <p><b><?=$array[3][1]?></b><br/><?=$array[3][5]?></p></span></a>
     </div></td>
     <td colspan="4" class="twoless event"><div class="img_block">
             <div class="over_block" style="background: url('img_pit/pit_<?=$array[4][0]?>.jpg') center center; background-size: cover;"></div>
             <a onclick="OpenMark(<?=$array[4][0]?>)" href="#mapid"><span><p><?=date('m.d.Y H:i', strtotime($array[4][2]))?></p>
-            <p><?=$array[4][5]?></p></span></a>
+            <p><b><?=$array[4][1]?></b><br/><?=$array[4][5]?></p></span></a>
     </div></td>
   </tr>
       </table>
