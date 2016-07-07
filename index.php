@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Яма</title>
+    <title>Ульяновские дорожные ямы</title>
     <!--<script src="http://api-maps.yandex.ru/2.1/?lang=ru-RU&key=ANgTdVcBAAAAlPAOYAIAh1mQRFOp4jTEirfE1TveLDyBD3cAAAAAAAAAAABBAkpTxoQtFBH3GPYQ_CpqgWxEBA==" type="text/javascript"></script> -->
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru-RU" type="text/javascript"></script>
     <script src="http://yandex.st/jquery/2.1.0/jquery.min.js" type="text/javascript"></script>
@@ -61,13 +61,14 @@
     <header>
 
       <a href="#home"><img src="img/logo.png" alt="LOGO"></a>
-      <a href="#about">О нас</a><span><b>&middot;</b></span>
-      <a href="#pit">Добавления</a><span><b>&middot;</b></span>
+      <a href="#aboutid">О нас</a><span><b>&middot;</b></span>
+      <a href="#pitid">Добавления</a><span><b>&middot;</b></span>
       <a href="#mapid">Карта ям</a>
 
     </header>
     <section id="home">
       <div class="h1_home-wrapper">
+        <br /><br />
         <h1><div class="ulyanovsk-h1">Ульяновские</div> дорожные&nbsp;&nbsp;ямы</h1>
         <p>
           Ямы на дорогах - это прямое нарушение закона. Собственники должны следить за состоянием дорожного полотна, но они не всегда выполняют свои обязанности. Наш проект создан для того, чтобы вы могли контролировать работу дорожных служб и добиваться ремонта ям в нашем городе.
@@ -92,6 +93,8 @@
       </div>
     </section>
     <section id="pit">
+      <br /><br />
+      <span id="pitid"></span>
       <h1>Последние добавления:</h1>
 
 <? require_once('LastMark.php'); ?>
@@ -130,9 +133,12 @@
     </div></td>
   </tr>
       </table>
-      <div class="repeater_uzors_black"></div>
+
     </section>
     <section id="about">
+      <br />
+        <span id="aboutid"></span>
+      <div class="repeater_uzors_black"></div>
       <h1>Данный проект был подготовлен</h1>
 
 

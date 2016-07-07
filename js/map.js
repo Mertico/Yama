@@ -9,7 +9,7 @@ function init () {
             searchControlProvider: 'yandex#search'
         }),
         objectManager = new ymaps.ObjectManager({
-            // Чтобы метки начали кластеризоваться, выставляем опцию.
+              // Чтобы метки начали кластеризоваться, выставляем опцию.
             clusterize: true,
             // ObjectManager принимает те же опции, что и кластеризатор.
             gridSize: 32

@@ -58,7 +58,6 @@
 
     section {
       font-size:  1.8rem;
-      padding-top: 6rem;
       position: relative;
     }
     #home {
@@ -71,7 +70,7 @@
       text-align: center;
       text-transform: uppercase;
       color: white;
-      margin-bottom: 1rem;
+      margin-bottom: -1rem;
       font-family: 'Open Sans';
     }
     #home h2
@@ -105,6 +104,7 @@
       margin: 0 auto;
       font-size: 4.5rem;
       letter-spacing: 1px;
+      line-height: 2.4rem;
     }
     .h2_home-wrapper
     {
@@ -317,6 +317,7 @@
       text-transform: uppercase;
       padding: 0rem 2rem;
       color: white;
+      padding-top: 3rem;
     }
     #about hr
     {
@@ -355,7 +356,7 @@
       height: 18px;
       width: 100%;
       position: absolute;
-      bottom: 0;
+      top: -18px;
     }
     #about
     {
@@ -372,6 +373,16 @@
    #mapid {
      position: absolute;
      margin-top: -2rem;
+   }
+   #aboutid
+   {
+     position: absolute;
+     margin-top: -3.5rem;
+   }
+   #pitid
+   {
+     position: absolute;
+     margin-top: -6.5rem;
    }
    #pit
    {
@@ -482,11 +493,13 @@ table p
   padding-left: 1rem;
   padding-right: 1rem;
   font-family: 'Open Sans';
+  text-align:justify;
 }
 span p:first-child
 {
   color: grey;
   margin-bottom: -1.25rem;
+  margin-top: 0.75rem;
 }
 
 
@@ -497,7 +510,7 @@ span p:first-child
             max-width: 200px;
             box-shadow: 0 0 3px rgba(0,0,0,0.5);
             position: absolute;;
-            z-index: 99999;
+            z-index: 9999;
             margin: 2rem;
             font-size: 1.5rem;
         }
