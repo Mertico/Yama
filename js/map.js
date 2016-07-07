@@ -41,29 +41,20 @@ function init () {
       myMap.balloon.open(coords, {
                       contentHeader:'Добавление ямы',
                       contentBody:
-                          '<form action="AddMark.php" method="post" enctype="multipart/form-data">' +
+                          '<form action="AddMark.php1" method="post" enctype="multipart/form-data">' +
                             '<input type="hidden" value="'+json_geo.response.GeoObjectCollection.featureMember[0].GeoObject['name']+'" class="add_adress-textbox" id="add_adress-textbox" name="address">' +
-                            '<textarea style="width: auto;" cols="48" rows="8" placeholder="Описание" name="about"></textarea>' +
+                            '<textarea style="width: auto;" cols="48" rows="8" placeholder="Описание" name="about" required></textarea>' +
                             '<div class="file_upload">' +
                                 '<button type="button">Открыть</button>' +
                                 '<div>Выберите картинку</div>' +
-                                '<input type="file" name="image_field" size="32">' +
+                                '<input type="file" name="image_field" size="32" required>' +
                             '</div>' +
                             '<input type="hidden" value="'+[coords[0].toPrecision(12),coords[1].toPrecision(12)].join(', ')+'" id="coords" name="coords">' +
                             '<input type="submit" value="Добавить" class="add-button">' +
                           '</form><br />',
                       contentFooter:'<sup>Если ошиблись щелкните еще раз</sup>'
                   });
-                  document.getElementById('add_adress-textbox').value=json_geo.response.GeoObjectCollection.featureMember[0].GeoObject['name'];
       });
-
-
-
-
-
-
-
-
 
 }
 

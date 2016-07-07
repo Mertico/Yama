@@ -9,7 +9,7 @@
     <script src="js/map.js" type="text/javascript"></script>
     <script src="js/click.js" type="text/javascript"></script>
 	<script type="text/javascript">
-
+	setInterval( function() {
   $(function(){
       var wrapper = $( ".file_upload" ),
           inp = wrapper.find( "input" ),
@@ -51,10 +51,8 @@
   });
 
 
-	var map_click_load = 0;
-	setInterval( function() {
-	if(document.getElementById('modal-toggle').checked==true)
-		if(map_click_load++ == 0) ymaps.ready(init_click)
+
+
 	} , 1000)
 	</script>
   </head>
@@ -64,39 +62,6 @@
     <header>
 
       <a href="#home"><img src="img/logo.png" alt="LOGO"></a>
-
-      <a class="pit">
-      <div class="modal-container">
-      <input id="modal-toggle" type="checkbox">
-      Добавить яму
-      <div class="modal-backdrop">
-        <div class="modal-content">
-          <label class="modal-close" for="modal-toggle">x</label>
-          <div class="admin_form"><h2>Добавление ямы</h2>
-          <form action="AddMark.php" method="post" enctype="multipart/form-data">
-            <input type="text" placeholder="Введите адрес" class="add_adress-textbox" id="add_adress-textbox" name="address">
-            <br />
-            <textarea placeholder="Описание" name="about"></textarea>
-            <br />
-
-            <div class="file_upload">
-                <button type="button">Открыть</button>
-                <div>Выберите картинку</div>
-                <input type="file" name="image_field" size="32">
-            </div>
-            <br />
-            <input type="hidden" id="coords" name="coords">
-            <div id="map_click" style="height: 20rem; width: 100%;"></div>
-
-            <input type="submit" value="Добавить" class="add-button" name="Submit">
-            <br />
-          </form>
-          </div>
-        </div>
-      </div>
-      </div>
-      </a>
-
       <a href="#about">О нас</a><span><b>&middot;</b></span>
       <a href="#pit">Добавления</a><span><b>&middot;</b></span>
       <a href="#mapid">Карта ям</a>
@@ -109,10 +74,12 @@
           Ямы на дорогах - это прямое нарушение закона. Собственники должны следить за состоянием дорожного полотна, но они не всегда выполняют свои обязанности. Наш проект создан для того, чтобы вы могли контролировать работу дорожных служб и добиваться ремонта ям в нашем городе.
         </p>
       </div>
+      <span id="mapid"></span>
       <div class="h2_home-wrapper">
-      <h2 id="mapid">Карта&nbsp;&nbsp;дорожных&nbsp;&nbsp;ям&nbsp;&nbsp;города</h2>
-      <div class="map-wrapper" id="map">
+      <h2 >Карта&nbsp;&nbsp;дорожных&nbsp;&nbsp;ям&nbsp;&nbsp;города</h2>
 
+      <div class="customControl">Хотите добавить яму? Просто щелкните на карту</div>
+      <div class="map-wrapper" id="map">
       </div>
       <!--<div class="add_new_pit-block-wrapper">
       <div class="add_new_pit-block">
@@ -214,4 +181,3 @@
   </body>
 </html>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-<script src="http://localhost:35729/livereload.js"></script>
